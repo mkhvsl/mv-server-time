@@ -1,0 +1,22 @@
+{
+    "name": "mkhvsl/mv-server-time",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Mykhailo Vasylenko",
+            "email": "mkhvsl@gmail.com"
+        }
+    ],
+    "license": "GPL-2.0+",
+    "autoload": {
+        "psr-4": {
+            "Mkhvsl\\MvServerTime\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    }
+}
