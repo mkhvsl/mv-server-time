@@ -1,6 +1,6 @@
 {
     "name": "mkhvsl/mv-server-time",
-    "type": "project",
+    "type": "library",
     "authors": [
         {
             "name": "Mykhailo Vasylenko",
