@@ -4,7 +4,7 @@ namespace Mkhvsl\MvServerTime;
 
 use DateTimeImmutable;
 use DateTimeInterface;
-use Exception;
+use RuntimeException;
 
 class ServerTime
 {
@@ -15,7 +15,7 @@ class ServerTime
      *
      * @param string|null $ip
      * @return DateTimeInterface
-     * @throws Exception
+     * @throws RuntimeException
      */
     public function now(?string $ip = null): DateTimeInterface
     {
@@ -30,13 +30,13 @@ class ServerTime
         $response = @file_get_contents($url, false, $context);
 
         if (!$response) {
-            throw new Exception("Unable to fetch time from API");
+            throw new RuntimeException("Unable to fetch time from API");
         }
 
         $data = json_decode($response, true);
 
         if (!isset($data['datetime'])) {
-            throw new Exception("Invalid response from API");
+            throw new RuntimeException("Invalid response from API");
         }
 
         return new DateTimeImmutable($data['datetime']);
