@@ -10,7 +10,7 @@ Returns current server time based on IP using https://worldtimeapi.org.
 ## Setup
 
 ```bash
-composer install
+composer require mkhvsl/mv-server-time
 ```
 
 ## Usage
@@ -22,7 +22,11 @@ require __DIR__ . '/vendor/autoload.php';
 
 use Mkhvsl\MvServerTime\ServerTime;
 
-$now = (new ServerTime())->now();
+$time = (new ServerTime())->now(); // Based on server IP
+// or
+$time = (new ServerTime())->now('8.8.8.8'); // Based on provided IP
+
+echo $time->format('Y-m-d H:i:s');
 
 ?>
 ```
